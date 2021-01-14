@@ -19,7 +19,8 @@ public class Example {
             @Cleanup BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
             String line;
-            while ((line = reader.readLine()) != null) {
+            while (true) {
+                if ((line = reader.readLine()) == null) continue;
                 System.out.println("line : " + line);
                 Console.log(line);
             }

@@ -87,7 +87,7 @@ public class Console {
             for (CommandListener listener : commandListeners) {
                 listener.onCommand(command, command.split(" "));
             }
-            frame.getTextField().setText(null);
+            frame.getTextField().setText("");
         }
     }
 

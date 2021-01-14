@@ -24,14 +24,8 @@ public class ConsoleInputStream extends Thread {
     }
 
     private class CustomInputStream extends InputStream {
-        public int read() {
-            while (listener.getCharacters().isEmpty()) {
-                try {
-                    sleep(1);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
+        public synchronized int read() {
+            if (listener.getCharacters().isEmpty() || listener.getCharacters().size() < 1) return -1;
             int value = listener.getCharacters().get(0).charValue();
             listener.getCharacters().remove(0);
             return value;
