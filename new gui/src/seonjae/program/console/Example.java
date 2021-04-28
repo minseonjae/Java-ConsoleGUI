@@ -1,11 +1,6 @@
-package seonjae.program.cosole;
+package seonjae.program.console;
 
-import lombok.Cleanup;
 import lombok.SneakyThrows;
-import seonjae.program.cosole.gui.MainFrame;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 
 public class Example {
     @SneakyThrows

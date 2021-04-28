@@ -1,4 +1,4 @@
-package seonjae.program.cosole.gui;
+package seonjae.program.console.gui;
 
 import javax.swing.*;
 

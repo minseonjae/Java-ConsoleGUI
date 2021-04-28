@@ -1,4 +1,4 @@
-package seonjae.program.cosole.stream;
+package seonjae.program.console.stream;
 
 import java.io.OutputStream;
 

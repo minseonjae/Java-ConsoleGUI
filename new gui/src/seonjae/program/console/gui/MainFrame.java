@@ -1,10 +1,10 @@
-package seonjae.program.cosole.gui;
+package seonjae.program.console.gui;
 
 import lombok.Getter;
-import seonjae.program.cosole.gui.listener.CommandFieldKeyListener;
-import seonjae.program.cosole.gui.listener.ComponentFocusListener;
-import seonjae.program.cosole.gui.listener.ConsoleCloseListener;
-import seonjae.program.cosole.gui.thread.CommandLabelBlinkThread;
+import seonjae.program.console.gui.listener.CommandFieldKeyListener;
+import seonjae.program.console.gui.listener.ComponentFocusListener;
+import seonjae.program.console.gui.listener.ConsoleCloseListener;
+import seonjae.program.console.gui.thread.CommandLabelBlinkThread;
 
 import javax.swing.*;
 import java.awt.*;

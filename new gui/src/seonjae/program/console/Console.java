@@ -1,9 +1,9 @@
-package seonjae.program.cosole;
+package seonjae.program.console;
 
 import lombok.Getter;
 import lombok.Setter;
-import seonjae.program.cosole.gui.MainFrame;
-import seonjae.program.cosole.stream.ConsolePrintStream;
+import seonjae.program.console.gui.MainFrame;
+import seonjae.program.console.stream.ConsolePrintStream;
 
 public class Console {
 

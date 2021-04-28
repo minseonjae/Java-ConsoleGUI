@@ -1,8 +1,8 @@
-package seonjae.program.cosole.gui.thread;
+package seonjae.program.console.gui.thread;
 
 import lombok.Setter;
 import lombok.SneakyThrows;
-import seonjae.program.cosole.gui.MainFrame;
+import seonjae.program.console.gui.MainFrame;
 
 public class CommandLabelBlinkThread extends Thread {
 

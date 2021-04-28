@@ -1,6 +1,6 @@
-package seonjae.program.cosole.gui.listener;
+package seonjae.program.console.gui.listener;
 
-import seonjae.program.cosole.gui.MainFrame;
+import seonjae.program.console.gui.MainFrame;
 
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;

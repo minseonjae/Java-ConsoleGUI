@@ -1,8 +1,7 @@
-package seonjae.program.cosole.stream;
+package seonjae.program.console.stream;
 
-import seonjae.program.cosole.gui.MainFrame;
+import seonjae.program.console.gui.MainFrame;
 
-import java.io.OutputStream;
 import java.io.PrintStream;
 
 public class ConsolePrintStream extends PrintStream {
