@@ -13,5 +13,7 @@ public class Example {
         System.out.println("asdf");
         System.out.println("asdf");
         System.out.println("asdf");
+        console.setDebugging(true);
+        console.debugLog("asdf");
     }
 }

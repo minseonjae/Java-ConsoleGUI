@@ -1,6 +1,7 @@
 package kr.codingtree.console;
 
 import kr.codingtree.console.command.ConsoleCommand;
+import kr.codingtree.console.commands.DebugCommand;
 import lombok.Getter;
 import lombok.Setter;
 import kr.codingtree.console.gui.MainFrame;
@@ -20,8 +21,14 @@ public class Console {
     @Getter
     private boolean hide = true;
 
+    @Getter
+    @Setter
+    private boolean debugging = false;
+
     public Console(String title) {
-        frame = new MainFrame(this.title = title, command = new ConsoleCommand());
+        frame = new MainFrame(this.title = title, command = new ConsoleCommand(this));
+
+        command.register(new DebugCommand());
 
         ConsolePrintStream printStream = new ConsolePrintStream(frame);
 
@@ -44,5 +51,14 @@ public class Console {
         frame.setVisible(false);
         frame.getCommandLabelBlinkThread().setStopped(true);
         return true;
+    }
+
+    public void log(Object message) {
+        System.out.println(message);
+    }
+    public void debugLog(Object message) {
+        if (debugging) {
+            System.out.println("[debug] " + message.toString());
+        }
     }
 }

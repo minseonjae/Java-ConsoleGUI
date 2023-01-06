@@ -1,5 +1,7 @@
 package kr.codingtree.console.command;
 
+import kr.codingtree.console.Console;
+
 public interface CommandExecutor {
-    public boolean onCommand(String[] commands);
+    boolean onCommand(Console console, String[] cmds);
 }
