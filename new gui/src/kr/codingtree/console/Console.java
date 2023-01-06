@@ -1,23 +1,27 @@
-package seonjae.program.console;
+package kr.codingtree.console;
 
+import kr.codingtree.console.command.ConsoleCommand;
 import lombok.Getter;
 import lombok.Setter;
-import seonjae.program.console.gui.MainFrame;
-import seonjae.program.console.stream.ConsolePrintStream;
+import kr.codingtree.console.gui.MainFrame;
+import kr.codingtree.console.stream.ConsolePrintStream;
 
 public class Console {
 
     @Setter
-    private static String title = "console";
+    private String title = "console";
 
     @Getter
-    private static MainFrame frame;
+    private MainFrame frame;
+
+    @Getter
+    private ConsoleCommand command;
 
     @Getter
     private boolean hide = true;
 
     public Console(String title) {
-        frame = new MainFrame(this.title = title);
+        frame = new MainFrame(this.title = title, command = new ConsoleCommand());
 
         ConsolePrintStream printStream = new ConsolePrintStream(frame);
 

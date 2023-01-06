@@ -1,18 +1,24 @@
-package seonjae.program.console.gui;
+package kr.codingtree.console.gui;
 
+import kr.codingtree.console.command.ConsoleCommand;
+import kr.codingtree.console.gui.listener.ComponentFocusListener;
+import kr.codingtree.console.gui.listener.ConsoleCloseListener;
+import kr.codingtree.console.gui.thread.CommandLabelBlinkThread;
 import lombok.Getter;
-import seonjae.program.console.gui.listener.CommandFieldKeyListener;
-import seonjae.program.console.gui.listener.ComponentFocusListener;
-import seonjae.program.console.gui.listener.ConsoleCloseListener;
-import seonjae.program.console.gui.thread.CommandLabelBlinkThread;
+import kr.codingtree.console.gui.listener.CommandFieldKeyListener;
 
 import javax.swing.*;
 import java.awt.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class MainFrame extends JFrame {
 
     private static final int[] SIZE = {700, 472};
     private static final Color BACKGROUND = Color.BLACK;
+
+    @Getter
+    private ConsoleCommand command;
 
     @Getter
     private ConsoleTextAreaScroll textAreaScroll;
@@ -25,8 +31,9 @@ public class MainFrame extends JFrame {
     @Getter
     private CommandLabelBlinkThread commandLabelBlinkThread;
 
-    public MainFrame(String title) {
+    public MainFrame(String title, ConsoleCommand command) {
         super(title);
+        this.command = command;
 
         setSize(SIZE[0], SIZE[1]);
         getContentPane().setBackground(BACKGROUND);
@@ -60,7 +67,20 @@ public class MainFrame extends JFrame {
     }
 
     public void log(Object message) {
-        textArea.append(" " + message.toString());
+        if (message.equals("\n")) {
+            textArea.append(message.toString());
+        } else {
+            textArea.append(" [");
+            textArea.append(LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
+            textArea.append("] ");
+            textArea.append(message.toString());
+        }
         textArea.setCaretPosition(textArea.getDocument().getLength());
+
+        String msg = textArea.getText();
+
+        if (msg.split("\n").length > 5000) {
+            textArea.setText(msg.substring(msg.indexOf("\n") + 1));
+        }
     }
 }

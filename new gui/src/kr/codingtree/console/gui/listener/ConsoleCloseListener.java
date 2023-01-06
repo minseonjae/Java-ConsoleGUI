@@ -1,6 +1,6 @@
-package seonjae.program.console.gui.listener;
+package kr.codingtree.console.gui.listener;
 
-import seonjae.program.console.gui.MainFrame;
+import kr.codingtree.console.gui.MainFrame;
 
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;

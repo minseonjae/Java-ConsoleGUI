@@ -1,4 +1,4 @@
-package seonjae.program.console.stream;
+package kr.codingtree.console.stream;
 
 import java.io.OutputStream;
 

@@ -1,6 +1,6 @@
-package seonjae.program.console.gui.listener;
+package kr.codingtree.console.gui.listener;
 
-import seonjae.program.console.gui.MainFrame;
+import kr.codingtree.console.gui.MainFrame;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -19,7 +19,10 @@ public class CommandFieldKeyListener implements KeyListener {
 
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ENTER && !frame.getCommandField().getText().isEmpty() && frame.getCommandField().getText().length() > 0) {
-            frame.log(frame.getCommandField().getText());
+            String cmd = frame.getCommandField().getText();
+            if (!frame.getCommand().execute(cmd)) {
+                System.out.println("해당 명령어가 존재하지 않습니다! \"" + cmd + "\"");
+            }
             frame.getCommandField().setText(null);
         }
     }

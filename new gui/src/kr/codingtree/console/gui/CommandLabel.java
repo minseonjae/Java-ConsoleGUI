@@ -1,4 +1,4 @@
-package seonjae.program.console.gui;
+package kr.codingtree.console.gui;
 
 import javax.swing.*;
 import java.awt.*;

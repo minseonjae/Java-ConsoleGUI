@@ -1,4 +1,4 @@
-package seonjae.program.console;
+package kr.codingtree.console;
 
 import lombok.SneakyThrows;
 

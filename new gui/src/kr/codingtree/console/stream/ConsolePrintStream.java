@@ -1,6 +1,6 @@
-package seonjae.program.console.stream;
+package kr.codingtree.console.stream;
 
-import seonjae.program.console.gui.MainFrame;
+import kr.codingtree.console.gui.MainFrame;
 
 import java.io.PrintStream;
 
